@@ -1,7 +1,6 @@
 package com.roveapps.hScheduler;
 
 
-import java.util.Date;
 import java.util.HashMap;
 
 public class Class {

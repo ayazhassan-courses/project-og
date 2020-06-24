@@ -4,9 +4,6 @@ import org.jsoup.nodes.Document;
 
 import java.util.*;
 import com.google.gson.Gson;
-import com.roveapps.JsonObjects;
-import com.roveapps.JsonObjects.ClassDayObject;
-import com.roveapps.JsonObjects.Major;
 import com.roveapps.JsonObjects.Schedule;
 import com.roveapps.hScheduler.*;
 import com.roveapps.hScheduler.Class;
@@ -21,6 +18,8 @@ public class Main {
 		NetworkingService.shared.setCredentials(PrivateConstants.username, PrivateConstants.password);
 	}
 
+	
+	//MARK: - Gets list of Courses
 	public String getCourses() {
 		ArrayList<JsonObjects.Major> courses = new ArrayList<>();
 
@@ -32,6 +31,7 @@ public class Main {
 		return gson.toJson(courses);
 	}
 
+	//MARK: - Initializes Scheduler with list of courses. 
 	public String getSchedule(ArrayList<String> myCourseNames) {
 
 		ArrayList<Course> courses = new ArrayList<>();
@@ -63,7 +63,7 @@ public class Main {
 
 	}
 
-	// Helper function to display schedule
+	//MARK: -Helper function to display schedule
 	private static JsonObjects.Schedule toTimeTable(ArrayList<Class> classes) {
 		JsonObjects.Schedule timetable = new JsonObjects.Schedule();
 
